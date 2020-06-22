@@ -1,0 +1,39 @@
+[
+    {
+        "name": "spring3-app",
+        "image": "${docker_repo_uri}:${docker_image_tag}",
+        "cpu": 512,
+        "memory": 300,
+        "essential": true,
+        "MountPoints": [],
+        "portMappings": [
+             {
+                 "hostPort": 8080,
+                 "containerPort": 8080,
+                 "protocol": "tcp"
+             }
+         ],
+        "links": [],
+        "command": [],
+        "entryPoint": [],
+
+        "environment": [
+          {
+            "name": "APP_DB_HOST",
+            "value": "${db_host}"
+          },
+          {
+            "name": "APP_DB_USER",
+            "value": "${db_user}"
+          },
+          {
+            "name": "APP_DB_PASSWORD",
+            "value": "${db_password}"
+          },
+          {
+            "name": "APP_DB_NAME",
+            "value": "${db_name}"
+          }
+        ]
+    }
+]
